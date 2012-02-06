@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.version     = gem_version
   s.authors     = ["Jørgen P. Tjernø"]
   s.email       = ["jtjerno@mylookout.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/jorgenpt/test-unit-betterpend"
   s.summary     = %q{Add a class-level pend that skips setup/teardown}
   s.description = %q{If you have very heavy-weight setup/teardown methods, this
   gem allows you to mark tests as pending on a class level. This will skip
