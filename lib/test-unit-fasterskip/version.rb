@@ -1,6 +1,6 @@
 module Test
   module Unit
-    module BetterPend
+    module FasterSkip
       VERSION = "0.0.2"
     end
   end
