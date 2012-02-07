@@ -14,10 +14,11 @@ Gem::Specification.new do |s|
   s.authors     = ["Jørgen P. Tjernø"]
   s.email       = ["jtjerno@mylookout.com"]
   s.homepage    = "https://github.com/jorgenpt/test-unit-fasterskip"
-  s.summary     = %q{Add a class-level pend that skips setup/teardown}
+  s.summary     = %q{Add class-level pend & omit_if/unless that skips setup/teardown}
   s.description = %q{If you have very heavy-weight setup/teardown methods, this
-  gem allows you to mark tests as pending on a class level. This will skip
-  calling setup/teardown for that test, but still "pend" it like normal.}
+  gem allows you to mark tests as pending or omitted on a class level. This will
+  skip calling setup/teardown for that test, but still "pend"/"omit" it like
+  normal.}
 
   s.rubyforge_project = "test-unit-fasterskip"
 
