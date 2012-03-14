@@ -15,7 +15,7 @@ module Test::Unit
 
       # Sugar for omit_if() { not .. }
       def omit_unless(message, *tests, &block)
-        attribute(:fast_omit, [caller, message, Proc.new { not block.call }], *tests)
+        attribute(:fast_omit, [caller, message, Proc.new { |*args| not block.call(*args) }], *tests)
       end
     end
 
