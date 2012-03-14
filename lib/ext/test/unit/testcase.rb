@@ -8,6 +8,11 @@ module Test::Unit
         attribute(:fast_pending, [caller, message], *tests)
       end
 
+      # Mark remaining tests in class as pending (and don't run setup/teardown)
+      def pend_rest_if(message)
+        attribute(:fast_pending, [caller, message], {:keep => true})
+      end
+
       # Omit (and don't run setup/teardown) if block evalutes to true.
       def omit_if(message, *tests, &block)
         attribute(:fast_omit, [caller, message, block], *tests)
@@ -16,6 +21,11 @@ module Test::Unit
       # Sugar for omit_if() { not .. }
       def omit_unless(message, *tests, &block)
         attribute(:fast_omit, [caller, message, Proc.new { |*args| not block.call(*args) }], *tests)
+      end
+
+      # Omit remaining tests in class (and don't run setup/teardown) if block evalutes to true.
+      def omit_rest_if(message, &block)
+        attribute(:fast_omit, [caller, message, block], {:keep => true})
       end
     end
 
